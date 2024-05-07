@@ -10,7 +10,7 @@ This challenge is done in a virtual machine with different users, from `level0` 
 
 From this point, we need to find a way to read the `.pass` file located in the home directory of the next user. The content of this file is the password for the user, thus enabling us to log in as the next user and completing the challenge of the current one.
 
-Example: Being able to read `/home/level3/.pass` reveals us the password of the user `level3`, thus completing the challenge of the user `level2`.
+Example: Being able to read `/home/user/level3/.pass` reveals us the password of the user `level3`, thus completing the challenge of the user `level2`.
 
 To achieve this, we need to exploit a binary located in the home directory of the current user.
 
