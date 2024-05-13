@@ -4,9 +4,12 @@ define si
 	echo Registers:\n
 	info register $eax $ebx $ecx $edx $esp $ebp $eip
 	echo \n---\n\n
+	echo Stack:\n
+	x/64x $esp
+	echo \n---\n\n
 	echo Following instructions:\n
 	x/15i $eip
-	stepi
+	nexti
 end
 
 define ni
