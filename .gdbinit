@@ -1,6 +1,7 @@
 set disassembly-flavor intel
 
 define si
+	stepi
 	echo Registers:\n
 	info register $eax $ebx $ecx $edx $esp $ebp $eip
 	echo \n---\n\n
@@ -9,10 +10,10 @@ define si
 	echo \n---\n\n
 	echo Following instructions:\n
 	x/15i $eip
-	nexti
 end
 
 define ni
+	nexti
 	echo Registers:\n
 	info register $eax $ebx $ecx $edx $esp $ebp $eip
 	echo \n---\n\n
@@ -21,7 +22,6 @@ define ni
 	echo \n---\n\n
 	echo Following instructions:\n
 	x/15i $eip
-	nexti
 end
 
 define inc
