@@ -20,7 +20,15 @@ next(data)
 
 for username, password in data:
     if username == user:
+        cmd = "sshpass -p " + password + " ssh -p 4243 " + user + "@localhost chmod 755 ."
+        print(cmd)
+        os.system(cmd)
+
         cmd = "sshpass -p " + password + " scp -P 4243 " + file + " " + user + "@localhost:" + file
+        print(cmd)
+        os.system(cmd)
+
+        cmd = "sshpass -p " + password + " ssh -p 4243 " + user + "@localhost chmod 644 " + file
         print(cmd)
         os.system(cmd)
         break
