@@ -20,7 +20,11 @@ next(data)
 
 for username, password in data:
     if username == user:
-        cmd = "sshpass -p " + password + " scp -P 4243 " + user + "@localhost:" + file + " " + file
+        new_file = file
+        if "/" in new_file:
+            new_file = new_file[new_file.rfind("/") + 1::]
+        
+        cmd = "sshpass -p " + password + " scp -P 4243 " + user + "@localhost:" + file + " " + new_file
         print(cmd)
         os.system(cmd)
         break
