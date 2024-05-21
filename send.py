@@ -23,8 +23,6 @@ for username, password in data:
         new_file = file
         if "/" in new_file:
             new_file = new_file[new_file.rfind("/") + 1::]
-        print(file)
-        print(new_file)
         cmd = "sshpass -p " + password + " scp -P 4243 " + file + " " + user + "@localhost:" + new_file
         print(cmd)
         os.system(cmd)
