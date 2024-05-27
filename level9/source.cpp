@@ -1,22 +1,41 @@
 #include <unistd.h>
+#include <string.h>
+
+class N {
+public:
+	N(int a) {
+		this->param = a;
+	}
+
+	int operator+(N *this, N *other) {
+		return other->param + this->param;
+	}
+
+	void	setAnnotation(char *str) {
+		size_t	n;
+	
+		n = strlen(str);
+		memcpy(this.s, str, n);
+	}
+
+	char s[100]; // Not sure
+	int	param;
+}
 
 void main(int argc,char **argv)
 {
-  N *my_class;
-  void (*fnc_pointer)((*void)(), N*);
-  
-  if (argc < 2) {
-    exit(1);
-  }
-  my_class = (N *)operator.new(0x6c);
+	N *base;
+	N *other;
 
-  N::N(my_class, 5);
+	if (argc < 2) {
+		exit(1);
+	}
+	base = new N(5);
 
-  fnc_pointer = new (void *);
+	other = new N(6);
 
-  N::N(fnc_pointer, 6);
-  N::setAnnotation(my_class, argv[1]);
+	base.setAnnotation(argv[1]);
 
-  fnc_pointer(fnc_pointer, my_class);
-  return;
+	other + base;
+	return;
 }
