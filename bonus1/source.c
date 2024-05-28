@@ -6,9 +6,9 @@ int main(int argc, char **argv) {
 	char	array[40];
 	int		size;
 
-	size = atoi(argv[0]);
+	size = atoi(argv[1]);
 	if (size < 10) {
-		memcpy(array, argv[1], size * 10);
+		memcpy(array, argv[2], size * 10);
 		if (size == 0x574f4c46) {
 			execl("/bin/sh", "sh", 0);
 		}
